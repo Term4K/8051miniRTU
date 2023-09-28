@@ -1,0 +1,80 @@
+# depslib dependency file v1.0
+1668181582 source:/home/digitize/Documents/stc89c52rc projects/libraries/1602A.c
+	"1602A.h"
+
+1668182132 /home/digitize/Documents/stc89c52rc projects/libraries/1602A.h
+	<8051.h>
+	"Delay.h"
+	"I2CGeneric.h"
+
+1668031662 /home/digitize/Documents/stc89c52rc projects/libraries/Delay.h
+	<8051.h>
+
+1667566206 /home/digitize/Documents/stc89c52rc projects/libraries/InbuiltDisplay.h
+	"Delay.h"
+	<8051.h>
+
+1668181367 source:/home/digitize/Documents/stc89c52rc projects/libraries/PCF8574.c
+	"PCF8574.h"
+
+1668181409 /home/digitize/Documents/stc89c52rc projects/libraries/PCF8574.h
+	<8051.h>
+	"I2CGeneric.h"
+
+1668032045 source:/home/digitize/Documents/stc89c52rc projects/libraries/ZS042.c
+	"ZS042.h"
+
+1668182725 /home/digitize/Documents/stc89c52rc projects/libraries/ZS042.h
+	<8051.h>
+	"I2CGeneric.h"
+
+1668113610 source:/home/digitize/Documents/stc89c52rc projects/TripleI2CProject/main.c
+	<8051.h>
+	"1602A.h"
+	"PCF8574.h"
+	"ZS042.h"
+
+1668031671 source:/home/digitize/Documents/stc89c52rc projects/libraries/Delay.c
+	"Delay.h"
+
+1668187018 /home/digitize/Documents/stc89c52rc projects/libraries/I2CGeneric.h
+	<8051.h>
+
+1668187653 source:/home/digitize/Documents/stc89c52rc projects/libraries/I2CGeneric.c
+	"I2CGeneric.h"
+
+1668185412 source:/home/digitize/Documents/stc89c52rc projects/triplei2cproject/main.c
+	<8051.h>
+	"1602A.h"
+	"PCF8574.h"
+	"ZS042_N.h"
+
+1668185405 /home/digitize/Documents/stc89c52rc projects/libraries/ZS042_N.h
+	<8051.h>
+	"I2CGeneric.h"
+
+1693424312 source:/home/digitize/Documents/stc89c52rc projects/libraries/Serial.c
+	"Serial.h"
+
+1692798783 /home/digitize/Documents/stc89c52rc projects/libraries/Serial.h
+	<8051.h>
+
+1693491723 source:/home/digitize/Documents/stc89c52rc projects/libraries/SPIGeneric.c
+	"SPIGeneric.h"
+
+1692200698 /home/digitize/Documents/stc89c52rc projects/libraries/SPIGeneric.h
+	<8051.h>
+
+1692909567 source:/home/digitize/Documents/stc89c52rc projects/w5500_bitbang/main.c
+	<8051.h>
+	"Serial.h"
+	"SPIGeneric.h"
+	"W5500.h"
+
+1692889810 /home/digitize/Documents/stc89c52rc projects/libraries/W5500.h
+	<8051.h>
+	"SPIGeneric.h"
+
+1692891198 source:/home/digitize/Documents/stc89c52rc projects/libraries/W5500.c
+	"W5500.h"
+

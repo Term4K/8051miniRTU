@@ -1,0 +1,42 @@
+#include "SPIGeneric.h"
+
+void _spigeneric_frame_start() {
+    pRESET = 1;  // Ensure RESET is high
+    pSCLK = 0;
+    pMOSI = 0;
+    pMISO = 1;
+    pCS = 0;
+}
+
+void _spigeneric_frame_end() {
+    pCS = 1;
+    pSCLK = 1;
+    pMOSI = 1;
+    pMISO = 1;
+}
+
+unsigned char _spigeneric_spit_bit(unsigned char bit) {
+    pMOSI = bit;
+    pSCLK = 1;
+    // Capture MISO state
+    unsigned char misoState = pMISO;
+    pSCLK = 0;
+    return misoState;
+}
+
+unsigned char _spigeneric_spit_byte(unsigned char byte) {
+    unsigned char receivedByte = 0;
+    for (int i = 0; i < 8; i++) {
+        unsigned char bit = (byte >> (7 - i)) & 0x01;
+        unsigned char misoBit = _spigeneric_spit_bit(bit);
+        receivedByte = (receivedByte << 1) | misoBit;
+    }
+    return receivedByte;
+}
+
+void _spigeneric_reset() {
+    pRESET = 0;
+    __asm nop __endasm;
+    __asm nop __endasm;
+    pRESET = 1;
+}
