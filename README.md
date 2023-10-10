@@ -1,1 +1,14 @@
-Makefile will build this for you, you need SDCC, SDAS (should come with sdcc package/installer) and Python (if you want to use the included STC loader). There is a Code::Blocks project that you can open as well if you want, but it is not really necessary to use, it builds using the makefile anyway. As far as setting this up from a hardware standpoint goes, it is expected P1.2 will be SCLK on the Wiznet board, P1.3 will be CS, P1.4 will be MISO, P1.5 will be MOSI, and P1.6 will be RESET. I don't know that reset is really necessary to connect, but the code will drive P1.6 high every time it sends a command, so you will surely not want P1.6 tied to anything else. These can be changed in SPIGeneric.asm as I couldn't figure out a way to use C preprocessor defines with assembly source (probably not even possible). The used pins are defined in SPIGeneric.asm by equating them with the addresses of the relevant SFRs, this is not super user friendly but the comments explain which pin is which. Unfortunately this means that to change them you must look up the addresses of the pins you wish to replace them with.
+# RTU SIMULATION
+This is a simple RTU simulation using an 8051 architecture board. This will accept both UDP and TCP packets. It will take any in the proper format (:<message>) and return a message in the propper return format with the message being in all caps (:[MESSAGE]). The switch is used to switch between TCP and UDP. The user can also use the serial interface to change the IP, Subnet, Gateway, and MAC Address. All traffic is routed through the W5500 chip and uses SPI to communicate between the STC89 and itself.
+
+# PARTS
+```
+STC89/STC12 DEMO BOARD
+WIZnet W5500
+1 SWITCH
+3 LEDs
+```
+
+# MAKEFILE
+The Makefile will build all this for you. You need to have SDCC, SDAS and Python. Python is used for the STCGAL to load the HEX onto the chip.  
+
